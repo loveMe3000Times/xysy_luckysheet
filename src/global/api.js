@@ -224,7 +224,9 @@ export function setCellValue(row, column, value, options = {}) {
             setcellvalue(row, column, data, value);
         }
     }
-
+    //   最关键的一行代码修改
+    Store.flowdata[row][column] = data[row][column]
+    
     /* cell更新后触发  */
     setTimeout(() => {
         // Hook function
