@@ -221,6 +221,11 @@ export function initialSheetBar(){
     });
 
     let luckysheetsheetnameeditor = function ($t) {
+        
+        if (!method.createHookFunction('sheetEditNameBefore', {  name: $t.text() })){
+            return;
+        }
+
         if(Store.allowEdit===false){
             return;
         }

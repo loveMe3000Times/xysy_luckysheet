@@ -39,6 +39,13 @@ const luckysheetConfigsetting = {
 
     defaultTextColor: '#000',
     defaultCellColor: '#fff',
+
+    dargColBox:false, // 设置是否可以拖动单元格 false 不可拖动
+    sheetMousemove:false,//sheet 是否可拖动
+
+    
+
+
 }
 
 export default luckysheetConfigsetting;

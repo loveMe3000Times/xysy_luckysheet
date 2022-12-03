@@ -1197,6 +1197,8 @@ const sheetmanage = {
             luckysheetsizeauto(false);
         }
 
+        
+
         let load = file["load"];
         if (load != null) {        
             let data = _this.buildGridData(file);
@@ -1213,6 +1215,7 @@ const sheetmanage = {
                 server.saveParam("shs", null, Store.currentSheetIndex);
             }, 1);
         }
+        
         else {
             let loadSheetUrl = server.loadSheetUrl;
             if(loadSheetUrl == "" || Store.luckysheetcurrentisPivotTable || !!isNewSheet){
@@ -1315,6 +1318,10 @@ const sheetmanage = {
         
         luckysheetFreezen.initialFreezen(index);
         _this.restoreselect();
+
+        method.createHookFunction('sheetActivateAfter', index, isPivotInitial, isNewSheet);
+
+
     },
     checkLoadSheetIndexToDataIndex:{},
     checkLoadSheetIndex: function(file) {

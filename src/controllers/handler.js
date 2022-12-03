@@ -1467,8 +1467,6 @@ export default function luckysheetHandler() {
         e.preventDefault();
         e.stopPropagation();
 
-
-
         let files = e.dataTransfer.files;
 
         //拖拽插入图片
@@ -1537,6 +1535,7 @@ export default function luckysheetHandler() {
         window.cancelAnimationFrame(Store.jfautoscrollTimeout);
 
         if(luckysheetConfigsetting  && luckysheetConfigsetting.hook && luckysheetConfigsetting.hook.sheetMousemove){
+            return;
             let mouse = mouseposition(event.pageX, event.pageY);
             let x = mouse[0] + $("#luckysheet-cell-main").scrollLeft();
             let y = mouse[1] + $("#luckysheet-cell-main").scrollTop();
@@ -3313,7 +3312,9 @@ export default function luckysheetHandler() {
 
             Store.jfautoscrollTimeout = window.requestAnimationFrame(mouseRender);
         }
+        
     });
+    
     //表格mouseup
     $(document).on("mouseup.luckysheetEvent",function (event) {
         if(luckysheetConfigsetting  && luckysheetConfigsetting.hook && luckysheetConfigsetting.hook.sheetMouseup){
@@ -4292,8 +4293,10 @@ export default function luckysheetHandler() {
     //     return;
     // }
 
-    //选区拖动替换
+    //选区拖动替换 禁止表格拖动
     $("#luckysheet-cell-main div.luckysheet-cs-draghandle").mousedown(function (event) {
+        // return;
+        if(!luckysheetConfigsetting.dargColBox) return;
         if(isEditMode() || Store.allowEdit===false){//此模式下禁用选区拖动
             return;
         }
@@ -4998,6 +5001,7 @@ export default function luckysheetHandler() {
     });
 
     $("#luckysheet-modal-dialog-mask").on("click dbclick mousedown mousemove mouseup", function (e) {
+        console.log(12312)
         e.stopPropagation();
         e.preventDefault();
     });
