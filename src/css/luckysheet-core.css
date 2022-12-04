@@ -1636,7 +1636,7 @@ body:not(.ewa-ipad) .luckysheet-rows-h-cell-sel:hover {
 
 .luckysheet-cell-main {
     /*border: solid 1px #BEC1C4;*/
-    background-color: white;
+    /* background-color: white; */
     width: 15px;
     height: 15px;
     background-color: #F3F3F2;
@@ -3057,9 +3057,12 @@ fieldset[disabled] .btn-danger.focus {
 }
 
 .luckysheet-input-box {
+    display: flex;
+    align-items: center;
+
     position: absolute;
     font: normal normal 400 13px arial, sans, sans-serif;
-    text-align: left;
+    text-align: center;
     top: -10000px;
     max-height: 9900px;
     max-width: 9900px;
