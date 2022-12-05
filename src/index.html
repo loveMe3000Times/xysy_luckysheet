@@ -201,23 +201,36 @@
 
 						},
 						// 页脚移动后回调函数
-						sheetActivateAfter:function (index, isPivotInitial, isNewSheet){
+						sheetActivateAfter: function (index, isPivotInitial, isNewSheet) {
 							// console.log(12312)
 						},
-						sheetEditNameBefore:function(name){
+						sheetEditNameBefore: function (name) {
 							// console.log(name)
 						},
-            // 选取拖拽下拉复制应用
-            rangeDropPaseteBefore: function(params){
-              console.log(params.currentCell);
-              if(params.currentCell?.v == '123'){
-                return false
-              }
-            },
+						// 选区下拉之前
+						rangeDropDownBefore: function () {
+							// console.log(11)
+							// return false;
+						},
+						// 选区下拉之后
+						rangeDropDownAfter: function () {
+							// console.log(22)
+						},
+						// 选取拖拽下拉复制应用
+						rangeDropPaseteBefore: function (params) {
+							console.log(params.currentCell);
+							if (params.currentCell?.v == '123') {
+								return false
+							}
+						},
 
-            rangeDropPaseteAfter: function(params){
-              params.currentCell.bg = ""
-            },
+						rangeDropPaseteAfter: function (params) {
+							params.currentCell.bg = ""
+						},
+						// 监听按钮删除回调
+						keycodeDeleteBefore:function(){
+							
+						},
 
             orderbydataBefore: function(data){
               window.cc_orderbydata = data.splice(-1);

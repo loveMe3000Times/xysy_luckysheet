@@ -2,6 +2,7 @@ import luckysheetConfigsetting from './luckysheetConfigsetting';
 import menuButton from './menuButton';
 import conditionformat from './conditionformat';
 import server from './server';
+import method from '../global/method';
 import {luckysheetupdateCell,setCenterInputPosition} from './updateCell';
 import { keycode } from './constant';
 import { 
@@ -801,6 +802,8 @@ export function keyboardInitial(){
                 selectHightlightShow();
             }
             else if (kcode == keycode.DELETE || kcode == keycode.BACKSPACE) {
+                if(!method.createHookFunction('keycodeDeleteBefore'))  return;
+
                 if(imageCtrl.currentImgId != null){
                     imageCtrl.removeImgItem();
                 }

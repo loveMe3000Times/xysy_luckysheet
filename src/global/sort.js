@@ -52,6 +52,7 @@ function orderbydata(data, index, isAsc) {
         }
     }
 
+
     let d = function (x, y) {
         let x1 = x[index] , y1 = y[index];
 
@@ -87,6 +88,10 @@ function orderbydata(data, index, isAsc) {
             return 1;
         }
     }
+
+
+
+    // if(!method.createHookFunction('rangeDropDownAfter'))  return;
 
     if (isAsc) {
         return data.sort(a);
@@ -188,6 +193,7 @@ function sortSelection(isAsc) {
     }
 
     const _locale = locale();
+    console.log(_locale)
     const locale_sort = _locale.sort;
 
     if(Store.luckysheet_select_save.length > 1){
@@ -204,6 +210,8 @@ function sortSelection(isAsc) {
     if(isAsc == null){
         isAsc = true;
     }
+
+    // console.log(Store.flowdata)
 
     let d = editor.deepCopyFlowData(Store.flowdata);
 
