@@ -969,6 +969,8 @@ const sheetmanage = {
             }
         }, 1);
     },
+
+    
     storeSheetParam: function() {
         let index = this.getSheetIndex(Store.currentSheetIndex);
         let file = Store.luckysheetfile[index];
