@@ -206,7 +206,14 @@
 						},
 						sheetEditNameBefore:function(name){
 							// console.log(name)
-						}
+						},
+            // 选取拖拽下拉复制应用
+            rangeDropPaseteBefore: function(params){
+              // console.log(params.currentCell);
+              if(params.currentCell?.v == '123'){
+                return false
+              }
+            },
 
 
 					},
