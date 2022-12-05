@@ -5289,7 +5289,6 @@ export default function luckysheetHandler() {
         if (isEditMode()) {//此模式下禁用粘贴
             return;
         }
-
         if (selection.isPasteAction) {
             $("#luckysheet-rich-text-editor").blur();
             selection.isPasteAction = false;
@@ -5404,6 +5403,7 @@ export default function luckysheetHandler() {
 
             if (txtdata.indexOf("luckysheet_copy_action_table") > - 1 && Store.luckysheet_copy_save["copyRange"] != null && Store.luckysheet_copy_save["copyRange"].length > 0 && isEqual) {
                 //剪切板内容 和 luckysheet本身复制的内容 一致
+                // console.log(Store.luckysheet_paste_iscut)
                 if (Store.luckysheet_paste_iscut) {
                     Store.luckysheet_paste_iscut = false;
                     selection.pasteHandlerOfCutPaste(Store.luckysheet_copy_save);
