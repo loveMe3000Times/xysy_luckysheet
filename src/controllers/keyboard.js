@@ -454,6 +454,7 @@ export function keyboardInitial(){
                     $("#luckysheet-icon-bold").click();
                 }
                 else if (kcode == 67) {//Ctrl + C  复制
+                    if(!method.createHookFunction('keycodeCopyBefore'))  return;
                     if(imageCtrl.currentImgId != null){
                         imageCtrl.copyImgItem(event);
                         return;
