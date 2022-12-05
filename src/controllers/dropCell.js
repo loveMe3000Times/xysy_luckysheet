@@ -2,6 +2,7 @@ import { rowLocationByIndex, colLocationByIndex } from '../global/location';
 import { countfunc } from '../global/count';
 import { getBorderInfoCompute } from '../global/border';
 import { isRealNum } from '../global/validate';
+import method from '../global/method';
 import { genarate, update } from '../global/format';
 import { jfrefreshgrid } from '../global/refresh';
 import editor from '../global/editor';
@@ -476,12 +477,16 @@ const luckysheetDropCell = {
 
             for(let i = apply_str_c; i <= apply_end_c; i++){
                 let copyD = copyData[i - apply_str_c];
+                
 
                 let applyData = _this.getApplyData(copyD, csLen, asLen);
 
                 if(direction == "down"){
                     for(let j = apply_str_r; j <= apply_end_r; j++){
                         let cell = applyData[j - apply_str_r];
+                        if(!method.createHookFunction('rangeDropPaseteBefore', { currentCell: d[j][i], copyData, direction, copy_str_r, copy_end_r, copy_str_c, copy_end_c, apply_str_r, apply_end_r, apply_str_c, apply_end_c })){
+                          continue;
+                        }
 
                         if(cell.f != null){
                             let f = "=" + formula.functionCopy(cell.f, "down", j - apply_str_r + 1);
@@ -534,6 +539,10 @@ const luckysheetDropCell = {
 
                         d[j][i] = cell;
 
+                        if(!method.createHookFunction('rangeDropPaseteAfter', { currentCell: d[j][i], copyData, direction, copy_str_r, copy_end_r, copy_str_c, copy_end_c, apply_str_r, apply_end_r, apply_str_c, apply_end_c })){
+                          continue;
+                        }
+
                         //边框
                         let bd_r = copy_str_r + (j - apply_str_r) % csLen;
                         let bd_c = i;
@@ -578,6 +587,9 @@ const luckysheetDropCell = {
                 if(direction == "up"){
                     for(let j = apply_end_r; j >= apply_str_r; j--){
                         let cell = applyData[apply_end_r - j];
+                        if(!method.createHookFunction('rangeDropPaseteBefore', { currentCell: d[j][i], copyData, direction, copy_str_r, copy_end_r, copy_str_c, copy_end_c, apply_str_r, apply_end_r, apply_str_c, apply_end_c })){
+                          continue;
+                        }
 
                         if(cell.f != null){
                             let f = "=" + formula.functionCopy(cell.f, "up", apply_end_r - j + 1);
@@ -622,6 +634,10 @@ const luckysheetDropCell = {
                         }
 
                         d[j][i] = cell;
+
+                        if(!method.createHookFunction('rangeDropPaseteAfter', { currentCell: d[j][i], copyData, direction, copy_str_r, copy_end_r, copy_str_c, copy_end_c, apply_str_r, apply_end_r, apply_str_c, apply_end_c })){
+                          continue;
+                        }
 
                         //边框
                         let bd_r = copy_end_r - (apply_end_r - j) % csLen;
@@ -677,6 +693,9 @@ const luckysheetDropCell = {
                 if(direction == "right"){
                     for(let j = apply_str_c; j <= apply_end_c; j++){
                         let cell = applyData[j - apply_str_c];
+                        if(!method.createHookFunction('rangeDropPaseteBefore', { currentCell: d[i][j], copyData, direction, copy_str_r, copy_end_r, copy_str_c, copy_end_c, apply_str_r, apply_end_r, apply_str_c, apply_end_c })){
+                          continue;
+                        }
 
                         if(cell.f != null){
                             let f = "=" + formula.functionCopy(cell.f, "right", j - apply_str_c + 1);
@@ -722,6 +741,10 @@ const luckysheetDropCell = {
 
                         d[i][j] = cell;
 
+                        if(!method.createHookFunction('rangeDropPaseteAfter', { currentCell: d[i][j], copyData, direction, copy_str_r, copy_end_r, copy_str_c, copy_end_c, apply_str_r, apply_end_r, apply_str_c, apply_end_c })){
+                          continue;
+                        }
+
                         //边框
                         let bd_r = i;
                         let bd_c = copy_str_c + (j - apply_str_c) % csLen;
@@ -766,6 +789,9 @@ const luckysheetDropCell = {
                 if(direction == "left"){
                     for(let j = apply_end_c; j >= apply_str_c; j--){
                         let cell = applyData[apply_end_c - j];
+                        if(!method.createHookFunction('rangeDropPaseteBefore', { currentCell: d[i][j], copyData, direction, copy_str_r, copy_end_r, copy_str_c, copy_end_c, apply_str_r, apply_end_r, apply_str_c, apply_end_c })){
+                          continue;
+                        }
 
                         if(cell.f != null){
                             let f = "=" + formula.functionCopy(cell.f, "left", apply_end_c - j + 1);
@@ -810,6 +836,10 @@ const luckysheetDropCell = {
                         }
 
                         d[i][j] = cell;
+
+                        if(!method.createHookFunction('rangeDropPaseteAfter', { currentCell: d[i][j], copyData, direction, copy_str_r, copy_end_r, copy_str_c, copy_end_c, apply_str_r, apply_end_r, apply_str_c, apply_end_c })){
+                          continue;
+                        }
 
                         //边框
                         let bd_r = i;
