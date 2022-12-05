@@ -1408,7 +1408,6 @@ div.luckysheet-sheets-m:hover {
 }
 
 .luckysheet-cols-h-cells {
-    background-color: #fff;
     margin: 0;
     padding: 0;
     border: none 0;
@@ -1422,6 +1421,7 @@ div.luckysheet-sheets-m:hover {
     cursor: default;
     width: 5000000px;
     height: inherit;
+    background-color: #fff;
 }
 
 .luckysheet-cols-h-cells-clip {
@@ -1516,6 +1516,7 @@ body:not(.ewa-ipad) .luckysheet-rows-h-cell-sel:hover {
     padding-top: 2px;
     cursor: default;
     width: 45px;
+    background-color: #fff;
 }
 
 .luckysheet-rows-h-hover {
