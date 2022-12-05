@@ -379,6 +379,8 @@ const luckysheetDropCell = {
 
             countfunc();
         });
+
+        
     },
     typeItemHide: function(){
         let _this = this;

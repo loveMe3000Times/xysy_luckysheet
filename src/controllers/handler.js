@@ -4094,8 +4094,12 @@ export default function luckysheetHandler() {
             Store.chart_selection.rangeResizeDragged();
         }
 
-        //选区下拉
+        //选区下拉 结束
         if (Store.luckysheet_cell_selected_extend) {
+
+            console.log(Store)
+            if(!method.createHookFunction('rangeDropDownAfter'))  return;
+
 
             
             Store.luckysheet_cell_selected_extend = false;
@@ -4213,6 +4217,8 @@ export default function luckysheetHandler() {
                         luckysheetDropCell.direction = "right";
 
                         col_e += col_index - last["column"][1];
+                        console.log(luckysheetDropCell.applyRange )
+
 
                         //是否有数据透视表范围
                         if (pivotTable.isPivotRange(row_e, col_e)) {
@@ -4342,8 +4348,11 @@ export default function luckysheetHandler() {
         event.stopPropagation();
     });
 
-    //选区下拉
+    //选区下拉 之前
     $("#luckysheet-cell-main div.luckysheet-cs-fillhandle").mousedown(function (event) {
+        if(!method.createHookFunction('rangeDropDownBefore'))  return;  
+
+        // return;
         if(isEditMode() || Store.allowEdit===false){//此模式下禁用选区下拉
             return;
         }
@@ -5006,7 +5015,6 @@ export default function luckysheetHandler() {
     });
 
     $("#luckysheet-modal-dialog-mask").on("click dbclick mousedown mousemove mouseup", function (e) {
-        console.log(12312)
         e.stopPropagation();
         e.preventDefault();
     });
