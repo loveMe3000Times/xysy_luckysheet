@@ -1535,7 +1535,8 @@ export default function luckysheetHandler() {
         window.cancelAnimationFrame(Store.jfautoscrollTimeout);
 
         if(luckysheetConfigsetting  && luckysheetConfigsetting.hook && luckysheetConfigsetting.hook.sheetMousemove){
-            return;
+           
+
             let mouse = mouseposition(event.pageX, event.pageY);
             let x = mouse[0] + $("#luckysheet-cell-main").scrollLeft();
             let y = mouse[1] + $("#luckysheet-cell-main").scrollTop();
@@ -1559,7 +1560,6 @@ export default function luckysheetHandler() {
                 col_pre = margeset.column[0];
                 col_index = margeset.column[2];
             }
-
 
             // if(Store.flowdata[row_index] && Store.flowdata[row_index][col_index]){
                 let sheetFile = sheetmanage.getSheetByIndex();
@@ -1596,6 +1596,8 @@ export default function luckysheetHandler() {
                         "end_c": col 
                     }, sheetFile,moveState,luckysheetTableContent);
                 }
+
+
             // }
         }
         
@@ -1706,6 +1708,8 @@ export default function luckysheetHandler() {
                 "top": y - pivotTable.movesave.height
             });
         }
+
+
         else if (Store.luckysheet_sheet_move_status) {
             let scrollLeft = $("#luckysheet-sheet-container-c").scrollLeft();
             let x = event.pageX + scrollLeft;
@@ -3312,6 +3316,7 @@ export default function luckysheetHandler() {
 
             Store.jfautoscrollTimeout = window.requestAnimationFrame(mouseRender);
         }
+        
         
     });
     
