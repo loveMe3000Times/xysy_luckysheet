@@ -2085,6 +2085,10 @@ export function rowColumnOperationInitial(){
                             continue;
                         }
 
+                        if(!method.createHookFunction("cellClearBefore",d[r][c], Store.luckysheet_select_save, Store.currentSheetIndex)){ 
+                          continue; 
+                        }
+
                         if(getObjType(d[r][c]) == "object"){
                             delete d[r][c]["m"];
                             delete d[r][c]["v"];
