@@ -4097,7 +4097,6 @@ export default function luckysheetHandler() {
         //选区下拉 结束
         if (Store.luckysheet_cell_selected_extend) {
 
-            console.log(Store)
             if(!method.createHookFunction('rangeDropDownAfter'))  return;
 
 

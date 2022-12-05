@@ -90,7 +90,8 @@ function orderbydata(data, index, isAsc) {
     }
 
 
-    console.log(data);
+
+    // if(!method.createHookFunction('rangeDropDownAfter'))  return;
 
     if (isAsc) {
         return data.sort(a);
