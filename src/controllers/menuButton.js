@@ -1947,10 +1947,10 @@ const menuButton = {
                 const locale_sort = _locale.sort;
                 const locale_filter = _locale.filter;
                 let itemdata = [
-                    {"text": locale_sort.asc, "value": "asc", "example": '<i class="iconfont luckysheet-iconfont-shengxu" aria-hidden="true"></i>'},
-                    {"text": locale_sort.desc, "value": "desc", "example": '<i class="iconfont luckysheet-iconfont-jiangxu" aria-hidden="true"></i>'},
-                    {"text": locale_sort.custom+"...", "value": "diysort", "example": '<i class="iconfont luckysheet-iconfont-zidingyipaixu" aria-hidden="true"></i>'},
-                    {"text": "", "value": "split", "example": ""},
+                    // {"text": locale_sort.asc, "value": "asc", "example": '<i class="iconfont luckysheet-iconfont-shengxu" aria-hidden="true"></i>'},
+                    // {"text": locale_sort.desc, "value": "desc", "example": '<i class="iconfont luckysheet-iconfont-jiangxu" aria-hidden="true"></i>'},
+                    // {"text": locale_sort.custom+"...", "value": "diysort", "example": '<i class="iconfont luckysheet-iconfont-zidingyipaixu" aria-hidden="true"></i>'},
+                    // {"text": "", "value": "split", "example": ""},
                     {"text": locale_filter.filter, "value": "filter", "example": '<i class="iconfont luckysheet-iconfont-shaixuan2" aria-hidden="true"></i>'},
                     {"text": locale_filter.clearFilter, "value": "clearfilter", "example": '<i class="iconfont luckysheet-iconfont-qingchushaixuan" aria-hidden="true"></i>'}
                 ];
