@@ -1896,10 +1896,10 @@ function luckysheetdeletetable(type, st, ed, sheetIndex) {
     }
 
     //空白列模板
-    let addcol = [];
-    for (let r = 0; r < slen; r++) {
-      addcol.push(null);
-    }
+    // let addcol = [];
+    // for (let r = 0; r < slen; r++) {
+    //   addcol.push(null);
+    // }
 
     for (let r = 0; r < d.length; r++) {
       let row = [].concat(d[r]);
@@ -1907,8 +1907,11 @@ function luckysheetdeletetable(type, st, ed, sheetIndex) {
       //删除选中列
       row.splice(st, slen);
 
-      d[r] = row.concat(addcol);
+      // d[r] = row.concat(addcol);
+      d[r] = row;
     }
+
+
   }
 
   // 修改当前sheet页时刷新
