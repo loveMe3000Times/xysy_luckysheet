@@ -228,30 +228,26 @@
 							params.currentCell.bg = ""
 						},
 						// 监听按钮删除回调
-						keycodeDeleteBefore:function(){
-							
+						keycodeDeleteBefore: function () {
+
 						},
 						// 监听键盘复制前回调
-						keycodeCopyBefore:function(){
+						keycodeCopyBefore: function () {
 							// console.log(12312);
 						},
 
-            orderbydataBefore: function(data){
-              window.cc_orderbydata = data.splice(-1);
-              console.log(window.cc_orderbydata , data);
-            },
+						orderbydataBefore: function (data) {
+							window.cc_orderbydata = data.splice(-1);
+						},
 
-            orderbydataAfter: function(data){
-              luckysheet.refreshFormula();
-              console.log(data);
-              data.push(...window.cc_orderbydata)
-              console.log(window.cc_orderbydata , data);
-            },
+						orderbydataAfter: function (data) {
+							luckysheet.refreshFormula();
+							data.push(...window.cc_orderbydata)
+						},
 
-            cellClearBefore: function(){
-              console.log(arguments);
-              return false;
-            },
+						cellClearBefore: function () {
+							return false;
+						},
 
 
 					},
