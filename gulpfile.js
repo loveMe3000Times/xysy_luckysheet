@@ -197,7 +197,7 @@ async function core_rollup() {
         file: 'dist/luckysheet.umd.js',
         format: 'umd',
         name: 'luckysheet',
-        sourcemap: true,
+        sourcemap: false,
         inlineDynamicImports:true,
         banner: banner
     });
@@ -207,7 +207,7 @@ async function core_rollup() {
             file: 'dist/luckysheet.esm.js',
             format: 'esm',
             name: 'luckysheet',
-            sourcemap: true,
+            sourcemap: false,
             inlineDynamicImports:true,
             banner: banner
         });
@@ -225,7 +225,7 @@ async function core() {
         minify: production,
         banner: { js: banner },
         target: ['es2015'],
-        sourcemap: true,
+        sourcemap: false,
         outfile: 'dist/luckysheet.umd.js',
       })
 }
