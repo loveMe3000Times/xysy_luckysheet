@@ -1,9 +1,10 @@
 {
-  "name": "luckysheet",
+  "name": "xysy_luckysheet",
   "version": "2.1.13",
   "main": "dist/luckysheet.cjs.js",
   "module": "dist/luckysheet.esm.js",
   "browser": "dist/luckysheet.umd.js",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
@@ -60,5 +61,9 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitee.com:PursuitComesFromLove/xysy_luckysheet.git"
   }
 }
